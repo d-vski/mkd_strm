@@ -10,7 +10,7 @@ def get_m3u8_link(url_path):
 
     # Example log statements:
     print("Starting get_m3u8_link() function...")
-    print(f"Received parameter value: {param_value}")
+    print(f"Received parameter value: {url}")
 
     r.content
     r.status_code
