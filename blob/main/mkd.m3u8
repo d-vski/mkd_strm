@@ -4,7 +4,7 @@
 #KODIPROP:inputstream.ffmpegdirect.manifest_type=hls
 #KODIPROP:inputstream.ffmpegdirect.is_realtime_stream=true
 #EXTINF:0 tvg-id="MRT1.mk" tvg-name="MRT 1" tvg-logo="https://vod-c57w.interspace.com/t/1/chn/45/poster-ln-1.png" ,1. МРТ 1
-https://mkd-strm.vercel.app/|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+https://mkd-strm.vercel.app/?param_name=https://play.mrt.com.mk/live/45|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 #KODIPROP:inputstream=inputstream.ffmpegdirect
 #KODIPROP:mimetype=application/vnd.apple.mpegurl
 #KODIPROP:inputstream.ffmpegdirect.open_mode=ffmpeg
@@ -61,6 +61,15 @@ https://eu.live.skyfolk.mk/live.m3u8|Mozilla/5.0 (Windows NT 10.0; Win64; x64) A
 #KODIPROP:inputstream.ffmpegdirect.is_realtime_stream=true
 #EXTINF:0 tvg-logo="http://intvaustralia.com/wp-content/uploads/2018/12/cropped-LOGO-CISTO-copy-2.png" ,9. inTV - Австралија Музика Телевизиа
 http://tv1.intv.mk:1935/live/intv/chunklist_w72131656.m3u8|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+#KODIPROP:mimetype=application/ogg
+#EXTGRP=МРТ Радио Сат (Македонската Радио Телевизија),Radio
+#EXTINF:0 radio="true" media="true" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Logo_of_Macedonian_Radio_SAT_%282012-%29.svg/400px-Logo_of_Macedonian_Radio_SAT_%282012-%29.svg.png" ,1. 
+#KODIPROP:mimetype=application/ogg
+#EXTGRP=МРТ Радио 1 (Македонската Радио Телевизија),Radio
+#EXTINF:0 radio="true" media="true" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Logo_of_Macedonian_Radio_1_%282012-%29.svg/400px-Logo_of_Macedonian_Radio_1_%282012-%29.svg.png" ,2.
+#KODIPROP:mimetype=application/ogg 
+#EXTGRP=Бизер Радио Ожрид,Radio
+https://biserradioohrid.radioca.st/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Бизер Радио Ожрид,Radio
 #EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/1/86231.v6.png" ,1. Бизер Радио Ожрид
