@@ -4,7 +4,7 @@
 #KODIPROP:inputstream.ffmpegdirect.manifest_type=hls
 #KODIPROP:inputstream.ffmpegdirect.is_realtime_stream=true
 #EXTINF:0 tvg-id="MRT1.mk" tvg-name="MRT 1" tvg-logo="https://vod-c57w.interspace.com/t/1/chn/45/poster-ln-1.png" ,1. МРТ 1
-https://vod-c57.interspace.com:443/channel_abr/45/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8yMS8yMDIzIDI6MzA6MDkgUE0maGFzaF92YWx1ZT1vRFFsRWRzQ3g0LzJZV1kreTBPZlh3PT0mdmFsaWRtaW51dGVzPTMwJmlkPTY0YmE5NjcxMzY3ZTQ=|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+https://mkd-strm.vercel.app/|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 #KODIPROP:inputstream=inputstream.ffmpegdirect
 #KODIPROP:mimetype=application/vnd.apple.mpegurl
 #KODIPROP:inputstream.ffmpegdirect.open_mode=ffmpeg
