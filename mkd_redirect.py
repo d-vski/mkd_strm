@@ -62,8 +62,6 @@ app = Flask(__name__)
 
 @app.route('/')
 
-print(running)
-
 def redirect_to_new_m3u8():
     # Call your function to get the new m3u8 URL with the auth token
     new_m3u8_url = get_m3u8_link()
