@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-from flask import Flask, redirect, request
+from flask import Flask, redirect, request, logging
 
 def get_m3u8_link(url_path):
     url = url_path
