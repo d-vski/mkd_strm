@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
       {
-          "src": "*.py",
-          "use": "@liudonghua123/now-flask"
+          "src": "*.ipynb",
+          "use": "@vercel/python"
       }
   ],
   "routes": [
       {
           "src": "(.*)",
-          "dest": "app.py"
+          "dest": "mkd_m3u8_updater-2.ipynb"
       }
   ]
 }
