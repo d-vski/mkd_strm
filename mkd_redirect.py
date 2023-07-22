@@ -8,7 +8,9 @@ def get_m3u8_link(url_path):
 
     r = requests.get(url)
 
-    print("Download about to start")
+    # Example log statements:
+    logging.info("Starting get_m3u8_link() function...")
+    logging.debug(f"Received parameter value: {param_value}")
 
     r.content
     r.status_code
