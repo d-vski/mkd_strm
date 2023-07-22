@@ -9,7 +9,7 @@
   "routes": [
       {
           "src": "(.*)",
-          "dest": "mkd_m3u8_updater-2.ipynb"
+          "dest": "mkd_redirect.py"
       }
   ]
 }
