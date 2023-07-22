@@ -3,7 +3,7 @@
 #KODIPROP:inputstream.ffmpegdirect.open_mode=ffmpeg
 #KODIPROP:inputstream.ffmpegdirect.manifest_type=hls
 #KODIPROP:inputstream.ffmpegdirect.is_realtime_stream=true
-#EXTINF:0 tvg-id="MRT1.mk" tvg-name="MRT 1" tvg-logo="https://vod-c57w.interspace.com/t/1/chn/45/poster-ln-1.png" ,1. МРТ 1
+#EXTINF:0 tvg-id="MRT1.mk" tvg-name="MRT Сат" tvg-logo="https://vod-c57w.interspace.com/t/1/chn/45/poster-ln-1.png" ,1. МРТ 1
 https://mkd-strm.vercel.app/?param_name=https://play.mrt.com.mk/live/45|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 #KODIPROP:inputstream=inputstream.ffmpegdirect
 #KODIPROP:mimetype=application/vnd.apple.mpegurl
@@ -61,48 +61,52 @@ https://eu.live.skyfolk.mk/live.m3u8|Mozilla/5.0 (Windows NT 10.0; Win64; x64) A
 #KODIPROP:inputstream.ffmpegdirect.is_realtime_stream=true
 #EXTINF:0 tvg-logo="http://intvaustralia.com/wp-content/uploads/2018/12/cropped-LOGO-CISTO-copy-2.png" ,9. inTV - Австралија Музика Телевизиа
 http://tv1.intv.mk:1935/live/intv/chunklist_w72131656.m3u8|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=МРТ Радио Сат (Македонската Радио Телевизија),Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Logo_of_Macedonian_Radio_SAT_%282012-%29.svg/400px-Logo_of_Macedonian_Radio_SAT_%282012-%29.svg.png" ,1. 
+#EXTINF:0 radio="true" media="true" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Logo_of_Macedonian_Radio_SAT_%282012-%29.svg/400px-Logo_of_Macedonian_Radio_SAT_%282012-%29.svg.png" ,1. МРТ Радио Сат (Македонската Радио Телевизија)
+
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=МРТ Радио 1 (Македонската Радио Телевизија),Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Logo_of_Macedonian_Radio_1_%282012-%29.svg/400px-Logo_of_Macedonian_Radio_1_%282012-%29.svg.png" ,2.
-#KODIPROP:mimetype=application/ogg 
-#EXTGRP=Бизер Радио Ожрид,Radio
-https://biserradioohrid.radioca.st/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+#EXTINF:0 radio="true" media="true" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Logo_of_Macedonian_Radio_1_%282012-%29.svg/400px-Logo_of_Macedonian_Radio_1_%282012-%29.svg.png" ,2. МРТ Радио 1 (Македонската Радио Телевизија)
+
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Бизер Радио Ожрид,Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/1/86231.v6.png" ,1. Бизер Радио Ожрид
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/1/86231.v6.png" ,3. Бизер Радио Ожрид
 https://biserradioohrid.radioca.st/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Радио Лав Охрид,Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/logo/2/13842.png" ,2. Радио Лав Охрид
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/logo/2/13842.png" ,4. Радио Лав Охрид
 https://icecast.ga/radio/8050/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/
+
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Радио Кавадарци Ожрид,Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/1/13991.v11.png" ,3. Радио Кавадарци Ожрид
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/1/13991.v11.png" ,5. Радио Кавадарци Ожрид
 https://stream-27.zeno.fm/a5ffd4skgg0uv?zs=MD2t21SpSgCzuCasGnZIbw|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Радио ВМРО БИТОЛА,Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/8/13718.v25.png" ,4. Радио ВМРО БИТОЛА
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/8/13718.v25.png" ,6. Радио ВМРО БИТОЛА
 http://radio.shoutcast.mk:8024/;stream.nsv|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Радио ТИМ Битола,Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/0/83090.v34.png" ,5. Радио ТИМ Битола
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/0/83090.v34.png" ,7. Радио ТИМ Битола
 http://radio.shoutcast.mk:8026/;stream.nsv|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Радио Роса,Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/3/13983.v8.png" ,6. Радио Роса
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/3/13983.v8.png" ,8. Радио Роса
 http://s3.free-shoutcast.com:18032/;stream.nsv|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Macedonian Folk Radio - Gostivar Press.mk,Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/4/105674.v4.png" ,7. Gostivar Press - Macedonian Folk Radio
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/4/105674.v4.png" ,9. Gostivar Press - Macedonian Folk Radio
 https://radio.dukahosting.com/8004/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Радио МЕФФ,Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/1/13621.v14.png" ,8. Радио МЕФФ
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/1/13621.v14.png" ,10. Радио МЕФФ
 http://91.121.195.222:16040/;|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Стар Народна,Radio
-#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/6/81466.v19.png" ,9. Стар Народна
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/6/81466.v19.png" ,11. Стар Народна
 https://eu4.fastcast4u.com/proxy/radiostarmk?mp=/stream/2/|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
