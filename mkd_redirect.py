@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 import json
 from flask import Flask, redirect
 
-def get_m3u8_link():
-    url = 'https://play.mrt.com.mk/live/45'
+def get_m3u8_link(url_path):
+    url = url_path
 
     r = requests.get(url)
 
@@ -63,8 +63,13 @@ app = Flask(__name__)
 @app.route('/')
 
 def redirect_to_new_m3u8():
+    # Get the 'param_name' parameter from the URL, if it exists
+    url_path = request.args.get('param_name')
+
+    # Call your function with the parameter value
+
     # Call your function to get the new m3u8 URL with the auth token
-    new_m3u8_url = get_m3u8_link()
+    new_m3u8_url = get_m3u8_link(url_path)
 
     # Redirect to the new m3u8 URL
     return redirect(new_m3u8_url, code=302)
