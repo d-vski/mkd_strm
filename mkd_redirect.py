@@ -5,6 +5,7 @@ from flask import Flask, redirect, request, logging
 
 def get_m3u8_link(url_path):
     url = url_path
+    selector_path = "#my-stage-ctn > div > script:nth-child(11)"
 
     r = requests.get(url)
 
@@ -18,7 +19,7 @@ def get_m3u8_link(url_path):
     soup = BeautifulSoup(r.content, "html.parser")
 
     # Define the CSS selector path to find the script element
-    selector_path = "#my-stage-ctn > div > script:nth-child(11)"
+    #selector_path = "#my-stage-ctn > div > script:nth-child(11)"
 
     # Use BeautifulSoup's select() method to find the script element
     script_element = soup.select_one(selector_path)
@@ -50,8 +51,6 @@ def get_m3u8_link(url_path):
     else:
         print("Script element not found.")
 
-    json_object
-
     mrt_sat_1_xmpeg = json_object[0]['src']
     mrt_sat_1_rtmp = json_object[1]['src']
 
@@ -59,6 +58,48 @@ def get_m3u8_link(url_path):
 
     return mrt_sat_1_xmpeg
 
+def get_m3u8_link_stanici(url_path):
+    url = url_path
+    selector_path = "div.wpb_raw_code:nth-child(2) > div:nth-child(1) > script:nth-child(5)"
+
+    r = requests.get(url)
+
+    # Example log statements:
+    # print("Starting get_m3u8_link() function...")
+    # print(f"Received parameter value: {url}")
+
+    soup = BeautifulSoup(r.content, "html.parser")
+
+    # Use BeautifulSoup's select() method to find the script element
+    script_element = soup.select_one(selector_path)
+
+    # Check if the script element exists before proceeding
+    if script_element:
+        # Extract the script content
+        script_content = script_element.string
+
+        # Find the position of the 'source:' string
+        source_start_index = script_content.find('source: "')
+
+        # Check if the 'source:' string is found before proceeding
+        if source_start_index != -1:
+            # Find the position of the closing quote after the 'source' value
+            source_end_index = script_content.find('"', source_start_index + len('source: "'))
+
+            # Check if the closing quote is found before proceeding
+            if source_end_index != -1:
+                # Extract the value of the 'source' attribute
+                source_value = script_content[source_start_index + len('source: "'):source_end_index]
+
+                # Print the extracted 'source' value
+                print(source_value)
+                return(source_value)
+            else:
+                print("Closing quote for 'source' attribute not found.")
+        else:
+            print("'source:' string not found.")
+    else:
+        print("Script element not found.")
 
 app = Flask(__name__)
 
@@ -68,10 +109,12 @@ def redirect_to_new_m3u8():
     # Get the 'param_name' parameter from the URL, if it exists
     url_path = request.args.get('param_name')
 
-    # Call your function with the parameter value
-
-    # Call your function to get the new m3u8 URL with the auth token
-    new_m3u8_url = get_m3u8_link(url_path)
+    if url_path.startswith("https://tvstanici.net/"):
+        new_m3u8_url = get_m3u8_link_stanici(url_path)
+    elif url.startswith("https://play.mrt.com.mk/live/"):
+        new_m3u8_url = get_m3u8_link(url_path)
+    else:
+        print("URL path not recognized.")    
 
     # Redirect to the new m3u8 URL
     return redirect(new_m3u8_url, code=302)
