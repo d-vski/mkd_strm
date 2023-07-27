@@ -111,7 +111,7 @@ def redirect_to_new_m3u8():
 
     if url_path.startswith("https://tvstanici.net/"):
         new_m3u8_url = get_m3u8_link_stanici(url_path)
-    elif url.startswith("https://play.mrt.com.mk/live/"):
+    elif url_path.startswith("https://play.mrt.com.mk/live/"):
         new_m3u8_url = get_m3u8_link(url_path)
     else:
         print("URL path not recognized.")    
