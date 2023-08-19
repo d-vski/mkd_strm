@@ -6,6 +6,19 @@
 #KODIPROP:inputstream.ffmpegdirect.is_realtime_stream=true
 #EXTINF:0 tvg-id="MRTSAT.mk" tvg-name="MRT Сат" tvg-logo="https://www.predavatel.com.mk/tv/makedonska-televizija/mrt-sat.png" ,МРТ Сат (Македонската Радио Телевизија)
 https://mkd-strm.vercel.app/?param_name=https://play.mrt.com.mk/live/45|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+#KODIPROP:mimetype=application/vnd.apple.mpegurl
+#KODIPROP:radio
+#EXTGRP=МРТ Радио Сат (Македонската Радио Телевизија),Radio
+#EXTINF:0 radio="true" media="true" tvg-logo="http://www.predavatel.com/mk/radio/makedonsko-radio/mr-sat.png" ,МРТ Радио Сат (Радио Скопје)
+https://mkd-strm.vercel.app/?param_name=https://play.mrt.com.mk/live/50|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+#KODIPROP:mimetype=application/ogg
+#EXTGRP=Бизер Радио Ожрид,Radio
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/l/1/86231.v6.png" ,Бизер Радио Ожрид
+https://biserradioohrid.radioca.st/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+#KODIPROP:mimetype=application/ogg
+#EXTGRP=Радио Лав Охрид,Radio
+#EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/logo/2/13842.png" ,Радио Лав Охрид
+https://icecast.ga/radio/8050/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome103.0.0.0 Safari/537.36
 #KODIPROP:inputstream=inputstream.ffmpegdirect
 #KODIPROP:mimetype=application/vnd.apple.mpegurl
 #KODIPROP:inputstream.ffmpegdirect.open_mode=ffmpeg
@@ -85,4 +98,4 @@ https://biserradioohrid.radioca.st/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x
 #KODIPROP:mimetype=application/ogg
 #EXTGRP=Радио Лав Охрид,Radio
 #EXTINF:0 radio="true" media="true" tvg-logo="https://au0-cdn.onlineradiobox.com/img/logo/2/13842.png" ,4. Радио Лав Охрид
-https://icecast.ga/radio/8050/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/
+https://icecast.ga/radio/8050/stream|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
