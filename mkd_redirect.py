@@ -45,7 +45,7 @@ def get_m3u8_link(url_path):
 def get_m3u8_link_stanici(url_path):
     url = url_path
     # Update the selector_path to target the <video> element directly
-    selector_path = "#primary > div > div.post-entry > div.wpb-content-wrapper > div.vc_row.wpb_row.vc_row-fluid > div > div > div > div:nth-child(3) > div > video"
+    selector_path = "video"
 
     r = requests.get(url)
 
@@ -63,7 +63,7 @@ def get_m3u8_link_stanici(url_path):
     else:
         print("Video element not found.")
 
-    return None  # Return None if the video element or src is not found
+    return soup.get_text()  # Return None if the video element or src is not found
 
 
 app = Flask(__name__)
