@@ -44,13 +44,12 @@ def get_m3u8_link(url_path):
     return mrt_sat_1_xmpeg
 
 def get_m3u8_link_stanici(url_path):
-    url = url_path
-    # Use cloudscraper to bypass Cloudflare's challenge
-    scraper = cloudscraper.create_scraper()
-    r = scraper.get(url)
-    
-    # Parse the resulting HTML
-    soup = BeautifulSoup(r.text, "html.parser")
+    headers = {
+        "User-Agent": "curl/7.68.0",
+        "Accept": "*/*",
+    }
+    r = requests.get(url_path, headers=headers)
+    soup = BeautifulSoup(r.content, "html.parser")
     video_element = soup.select_one("video")
 
     if video_element:
