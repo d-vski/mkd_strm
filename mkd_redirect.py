@@ -1,4 +1,5 @@
 import requests
+import cloudscraper
 from bs4 import BeautifulSoup
 import json
 from flask import Flask, redirect, request, Response
@@ -44,16 +45,15 @@ def get_m3u8_link(url_path):
 
 def get_m3u8_link_stanici(url_path):
     url = url_path
-    # Update the selector_path to target the <video> element directly
-    selector_path = "video"
-
-    r = requests.get(url)
-
-    soup = BeautifulSoup(r.content, "html.parser")
-    video_element = soup.select_one(selector_path)
+    # Use cloudscraper to bypass Cloudflare's challenge
+    scraper = cloudscraper.create_scraper()
+    r = scraper.get(url)
+    
+    # Parse the resulting HTML
+    soup = BeautifulSoup(r.text, "html.parser")
+    video_element = soup.select_one("video")
 
     if video_element:
-        # Extract the 'src' attribute from the <video> element
         source_value = video_element.get('src')
         if source_value:
             print(source_value)
