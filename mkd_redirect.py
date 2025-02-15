@@ -44,28 +44,27 @@ def get_m3u8_link(url_path):
 
 def get_m3u8_link_stanici(url_path):
     url = url_path
+    # Update the selector_path to target the <video> element directly
     selector_path = "#primary > div > div.post-entry > div.wpb-content-wrapper > div.vc_row.wpb_row.vc_row-fluid > div > div > div > div:nth-child(3) > div > video"
 
     r = requests.get(url)
 
     soup = BeautifulSoup(r.content, "html.parser")
-    script_element = soup.select_one(selector_path)
+    video_element = soup.select_one(selector_path)
 
-    if script_element:
-        script_content = script_element.string
-        source_start_index = script_content.find('source: "')
-        if source_start_index != -1:
-            source_end_index = script_content.find('"', source_start_index + len('source: "'))
-            if source_end_index != -1:
-                source_value = script_content[source_start_index + len('source: "'):source_end_index]
-                print(source_value)
-                return source_value
-            else:
-                print("Closing quote for 'source' attribute not found.")
+    if video_element:
+        # Extract the 'src' attribute from the <video> element
+        source_value = video_element.get('src')
+        if source_value:
+            print(source_value)
+            return source_value
         else:
-            print("'source:' string not found.")
+            print("No 'src' attribute found in the <video> element.")
     else:
-        print("Script element not found.")
+        print("Video element not found.")
+
+    return None  # Return None if the video element or src is not found
+
 
 app = Flask(__name__)
 
