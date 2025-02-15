@@ -44,7 +44,7 @@ def get_m3u8_link(url_path):
 
 def get_m3u8_link_stanici(url_path):
     url = url_path
-    selector_path = "div.wpb_raw_code:nth-child(2) > div:nth-child(1) > script:nth-child(5)"
+    selector_path = "#primary > div > div.post-entry > div.wpb-content-wrapper > div.vc_row.wpb_row.vc_row-fluid > div > div > div > div:nth-child(3) > div > video"
 
     r = requests.get(url)
 
