@@ -61,9 +61,10 @@ def get_m3u8_link_stanici(url_path):
         else:
             print("No 'src' attribute found in the <video> element.")
     else:
-        print("Video element not found.")
+        error_message = "Video element not found. " + r.text
+        print(error_message)
 
-    return soup.get_text()  # Return None if the video element or src is not found
+    return None  
 
 
 app = Flask(__name__)
