@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-from flask import Flask, redirect, request, logging
+from flask import Flask, redirect, request, Response
 
 def get_m3u8_link(url_path):
     url = url_path
@@ -18,32 +18,16 @@ def get_m3u8_link(url_path):
 
     soup = BeautifulSoup(r.content, "html.parser")
 
-    # Define the CSS selector path to find the script element
-    #selector_path = "#my-stage-ctn > div > script:nth-child(11)"
-
-    # Use BeautifulSoup's select() method to find the script element
     script_element = soup.select_one(selector_path)
 
-    # Check if the script element exists before proceeding
     if script_element:
-        # Extract the script content
         script_content = script_element.string
-
-        # Extract the JSON portion from the script content
-        start_index = script_content.find("[[{")  # Find the start of the JSON array
-
-        # Check if the start index is found before proceeding
+        start_index = script_content.find("[[{")
         if start_index != -1:
-            end_index = script_content.find("}]]", start_index) + 3  # Find the end of the JSON array
-
-            # Check if the end index is found before proceeding
+            end_index = script_content.find("}]]", start_index) + 3
             if end_index != -1:
                 json_data = script_content[start_index:end_index]
-
-                # Load the JSON data using json.loads()
                 json_object = json.loads(json_data)[0]
-
-                # Now you can work with the extracted JSON object
             else:
                 print("End index not found.")
         else:
@@ -64,36 +48,18 @@ def get_m3u8_link_stanici(url_path):
 
     r = requests.get(url)
 
-    # Example log statements:
-    # print("Starting get_m3u8_link() function...")
-    # print(f"Received parameter value: {url}")
-
     soup = BeautifulSoup(r.content, "html.parser")
-
-    # Use BeautifulSoup's select() method to find the script element
     script_element = soup.select_one(selector_path)
 
-    # Check if the script element exists before proceeding
     if script_element:
-        # Extract the script content
         script_content = script_element.string
-
-        # Find the position of the 'source:' string
         source_start_index = script_content.find('source: "')
-
-        # Check if the 'source:' string is found before proceeding
         if source_start_index != -1:
-            # Find the position of the closing quote after the 'source' value
             source_end_index = script_content.find('"', source_start_index + len('source: "'))
-
-            # Check if the closing quote is found before proceeding
             if source_end_index != -1:
-                # Extract the value of the 'source' attribute
                 source_value = script_content[source_start_index + len('source: "'):source_end_index]
-
-                # Print the extracted 'source' value
                 print(source_value)
-                return(source_value)
+                return source_value
             else:
                 print("Closing quote for 'source' attribute not found.")
         else:
@@ -104,20 +70,28 @@ def get_m3u8_link_stanici(url_path):
 app = Flask(__name__)
 
 @app.route('/')
-
 def redirect_to_new_m3u8():
     # Get the 'param_name' parameter from the URL, if it exists
     url_path = request.args.get('param_name')
 
-    if url_path.startswith("https://tvstanici.net/"):
-        new_m3u8_url = get_m3u8_link_stanici(url_path)
-    elif url_path.startswith("https://play.mrt.com.mk/live/"):
-        new_m3u8_url = get_m3u8_link(url_path)
-    else:
-        print("URL path not recognized.")    
+    if url_path:
+        if url_path.startswith("https://tvstanici.net/"):
+            new_m3u8_url = get_m3u8_link_stanici(url_path)
+        elif url_path.startswith("https://play.mrt.com.mk/live/"):
+            new_m3u8_url = get_m3u8_link(url_path)
+        else:
+            return "URL path not recognized.", 400  # Return a 400 Bad Request if the URL is not recognized
 
-    # Redirect to the new m3u8 URL
-    return redirect(new_m3u8_url, code=302)
+        # Redirect to the new m3u8 URL
+        return redirect(new_m3u8_url, code=302)
+    else:
+        # If no parameter is provided, read and return the contents of channels.m3u
+        try:
+            with open('channels.m3u', 'r') as file:
+                channels_content = file.read()
+            return Response(channels_content, mimetype='text/plain')
+        except FileNotFoundError:
+            return "channels.m3u file not found.", 404  # Return a 404 Not Found if the file does not exist
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
